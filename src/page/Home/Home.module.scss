@@ -1,0 +1,192 @@
+.banner-main {
+    display: flex;
+    // margin: 2.5rem 0;
+
+    .banner-main-iteam {
+        transition: all 0.2s linear;
+        overflow: hidden;
+
+        &:hover img {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        transition: all 0.5s linear;
+    }
+}
+.group-colection {
+    margin: 2.5rem 0;
+}
+.background-colection {
+    background-image: url('../../../public/eternity/background-colection.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 475px;
+}
+.iteam-colections {
+    margin-top: -380px;
+    position: relative;
+    .colection-header {
+        text-align: center;
+        text-transform: uppercase;
+        width: 100%;
+        position: relative;
+        padding: 0 0 20px;
+        margin-bottom: 20px;
+
+        p {
+            font-size: 1.4rem;
+            color: var(--nomal-color);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            color: #fff;
+        }
+        ::before {
+            content: '';
+            width: 200px;
+            height: 3px;
+            background: #fff;
+            position: absolute;
+            bottom: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+.colection-show {
+    background: #fff;
+    display: flex;
+    padding: 20px 10px;
+
+    .colection-iteam {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        margin: 0px 10px;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        transition: all 0.5s linear;
+
+        &:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+    }
+    span {
+        padding: 1rem 2rem;
+        background-color: var(--nomal-color);
+        color: var(--style-color);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        font-size: 1.3rem;
+        transform: translateX(-50%);
+    }
+}
+
+.my-swiper {
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 2.5rem 0;
+}
+
+.iteam-img {
+    &:hover img {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    img {
+        width: 100%;
+        height: auto;
+        opacity: 0.4;
+        transition: all 0.2s ease;
+    }
+}
+
+.reciver-new {
+    background-image: url('../../../public//eternity/background-colection.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+    position: relative;
+
+    .form-reciver {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--nomal-color);
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .type-form-reciver {
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+
+            .reciver-email {
+                width: 100%;
+                border-radius: 50px;
+                font-size: 1rem;
+                font-weight: 400;
+                padding: 0.6rem 1.5rem 0.8rem;
+                border: none;
+                box-shadow: none;
+                outline: 0;
+                line-height: 1.5;
+                color: var(--color-name-input);
+                background-color: var(--nomal-color);
+            }
+            .sub-reciver {
+                position: absolute;
+                top: 0;
+                right: 0;
+                outline: none;
+                border: 0 none;
+                color:var(--style-color);
+                background-color: var(--nomal-color);
+                font-weight: 700;
+                padding: 0 2rem;
+                text-transform: uppercase;
+                border-radius: 50px;
+                height: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width:57.6rem) {
+    .iteam-colections {
+        .colection-header{
+            p{
+                font-size: 1.2rem;
+            }
+            h2{
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    .colection-show {
+        display:block;
+    }
+}

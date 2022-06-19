@@ -1,0 +1,678 @@
+{
+    "shops":[
+        {
+            "id" : 1,
+            "title" : "Hoodie Basic Eternity",
+            "details" :[
+                
+            ],
+            "coin": 380000,
+            "saleCoin":48000,
+            "totalSale":21,
+            "image": "/eternity/group-double.webp",
+            "listImg":[
+                "/eternity/group-double.webp",
+                "/eternity/sp2.webp",
+                "/eternity/sp2-2.webp",
+                "/eternity/sp2-3.webp",
+                "/eternity/sp2-4.webp"
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ],
+
+           "optionColor": [
+               "trắng",
+               "nâu",
+               "kem",
+               "đen"
+           ]
+        },
+        {
+            "id" : 2,
+            "title" : "SHADOW TEE",
+            "details" :[
+                
+            ],
+            "coin": 250000,
+            "image": "/eternity/group-double-3.webp",
+            "listImg":[
+                "/eternity/group-double-3.webp",
+                "/eternity/sp1.webp",
+                "/eternity/sp1-2.webp",
+                "/eternity/sp1-3.webp",
+                "/eternity/sp1-4.webp",
+                "/eternity/sp1-5.webp",
+                "/eternity/sp1-6.webp"
+
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ],
+
+           "optionColor": [
+               "kem"
+               
+           ]
+        },
+        {
+            "id" : 3,
+            "title" : "I TIMBER VARSITY I SS2022",
+            "details" :[
+                
+            ],
+            "coin": 1200000,
+            "image": "/eternity/group-double-1.webp",
+            "listImg":[
+                "/eternity/group-double-1.webp",
+                "/eternity/sp5.webp",
+                "/eternity/sp5-1.webp",
+                "/eternity/sp5-2.webp",
+                "/eternity/sp5-3.webp",
+                "/eternity/sp5-4.webp",
+                "/eternity/sp5-6.webp"
+
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ],
+
+           "optionColor": [
+               "nâu"
+              
+           ]
+        },
+        {
+            "id" : 4,
+            "title" : "\"GREEN\" VARSITY",
+            "details" :[
+                
+            ],
+            "coin": 600000,
+            "image": "/eternity/group-double-2.webp",
+            "listImg":[
+                "/eternity/group-double-2.webp",
+                "/eternity/sp6.webp",
+                "/eternity/sp6-1.webp",
+                "/eternity/sp6-2.webp",
+                "/eternity/sp6-3.webp",
+                "/eternity/sp6-4.webp",
+                "/eternity/sp6-5.webp",
+                "/eternity/sp6-6.webp",
+                "/eternity/sp6-7.webp"
+
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ],
+
+           "optionColor": [
+               "xanh"
+               
+           ]
+        },
+        {
+            "id" : 5,
+            "title" : "\"DUST\" VARSITY",
+            "details" :[
+                
+            ],
+            "coin": 580000,
+            "image": "/eternity/group-standing.webp",
+            "listImg":[
+                "/eternity/group-standing-1.webp",
+                "/eternity/banner-1.webp",
+                "/eternity/banner-2.webp",
+                "/eternity/sp3.webp",
+                "/eternity/sp3-1.webp",
+                "/eternity/sp3-2.webp",
+                "/eternity/sp3-3.webp",
+                "/eternity/sp3-4.webp"
+
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ],
+
+           "optionColor": [
+               "đỏ"
+               
+           ]
+        },
+        {
+            "id" : 6,
+            "title" : "\"|BILLIARD VARSITY |",
+            "details" :[
+                
+            ],
+            "coin": 380000,
+            "saleCoin":580000,
+            "totalSale":39,
+            "image":"/eternity/sp4-3.webp",
+            "listImg":[
+               "/eternity/group-tanding-2nav.webp",
+                "/eternity/sp4-.webp",
+                "/eternity/sp4-1.webp",
+                "/eternity/sp4-2.webp",
+                "/eternity/sp4-3.webp",
+                "/eternity/sp4-4.webp",
+                "/eternity/sp4-5.webp"
+
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ],
+
+           "optionColor": [
+               "đen"
+               
+           ]
+        },
+        {
+            "id" : 7,
+            "title" : "BROWN - TSHIRT",
+            "details" :[
+                
+            ],
+            "coin": 250000,
+            "saleCoin":38000,
+            "totalSale":29,
+            "image": "/eternity/sp7.webp",
+            "listImg":[
+                "/eternity/sp7.webp",
+                "/eternity/sp7-1.webp",
+                "/eternity/sp7-2.webp",
+                "/eternity/sp7-3.webp",
+                "/eternity/sp7-4.webp",
+                "/eternity/sp7-5.webp",
+                "/eternity/sp7-6.webp",
+                "/eternity/sp7-7.webp"
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ],
+
+           "optionColor": [
+               "nâu"
+           ]
+        },
+        {
+            "id" : 8,
+            "title" : "EY BLACK BLUE TEE",
+            "details" :[
+                
+            ],
+            "coin": 250000,
+            "image": "/eternity/sp8-4.webp",
+            "listImg":[
+                "/eternity/sp8-4.webp",
+                "/eternity/sp8.webp",
+                "/eternity/sp8-1.webp",
+                "/eternity/sp8-2.webp",
+                "/eternity/sp8-3.webp",
+                "/eternity/sp8-5.webp",
+                "/eternity/sp8-6.webp",
+                "/eternity/sp8-7.webp"
+
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ]
+        },
+        {
+            "id" : 9,
+            "title" : "DEAL HOT - Short EY",
+            "details" :[
+                
+            ],
+            "coin": 169000,
+            "saleCoin":25000,
+            "totalSale":35,
+            "image": "/eternity/sp9.webp",
+            "listImg":[
+                "/eternity/sp9.webp",
+                "/eternity/sp9.webp",
+                "/eternity/sp9-1.webp",
+                "/eternity/sp9-2.webp",
+                "/eternity/sp9-3.webp",
+                "/eternity/sp9-4.webp",
+                "/eternity/sp9-5.webp",
+                "/eternity/sp9-6.webp",
+                "/eternity/sp9-7.webp"
+
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ],
+
+           "optionColor": [
+               "trắng",
+               "nâu",
+               "kem",
+               "đen"
+           ]
+        },
+        {
+            "id" : 10,
+            "title" : "RETRO T-SHIRT I BLUE",
+            "details" :[
+                
+            ],
+            "coin": 220000,
+            "saleCoin":35000,
+            "totalSale":37,
+            "image": "/eternity/sp10.webp",
+            "listImg":[
+                "/eternity/sp10.webp",
+                "/eternity/sp10-1.webp",
+                "/eternity/sp10-2.webp",
+                "/eternity/sp10-3.webp",
+                "/eternity/sp10-4.webp",
+                "/eternity/sp10-5.webp",
+                "/eternity/sp10-6.webp",
+                "/eternity/sp10-7.webp"
+
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ]
+        },
+        {
+            "id" : 11,
+            "title" : "\"FLOWER PLANET\" TEE",
+            "details" :[
+                
+            ],
+            "coin": 220000,
+            "saleCoin":35000,
+            "totalSale":37,
+            "image": "/eternity/sp11.png",
+            "listImg":[
+                "/eternity/sp11.png",
+                "/eternity/sp11-1.webp",
+                "/eternity/sp11-2.webp",
+                "/eternity/sp11-3.webp",
+                "/eternity/sp11-4.webp",
+                "/eternity/sp11-5.webp",
+                "/eternity/sp11-6.webp",
+                "/eternity/sp11-7.webp"
+
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ]
+        },
+        {
+            "id" : 12,
+            "title" : "\"GAME FOR YOURSELF\" TEE",
+            "details" :[
+                
+            ],
+            "coin": 180000,
+            "saleCoin":35000,
+            "totalSale":49,
+            "image": "/eternity/sp12.webp",
+            "listImg":[
+                "/eternity/sp12.webp",
+                "/eternity/sp12-1.webp",
+                "/eternity/sp12-2.webp",
+                "/eternity/sp12-3.webp",
+                "/eternity/sp12-4.webp",
+                "/eternity/sp12-5.webp",
+                "/eternity/sp12-6.webp",
+                "/eternity/sp12-7.webp"
+
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ]
+        },
+        {
+            "id" : 13,
+            "title" : "\"WISDOM\" TEE I No Restock",
+            "details" :[
+                
+            ],
+            "coin": 220000,
+            "saleCoin":35000,
+            "totalSale":37,
+            "image": "/eternity/sp14.webp",
+            "listImg":[
+                "/eternity/sp14.webp",
+                "/eternity/sp14-1.webp",
+                "/eternity/sp14-2.webp",
+                "/eternity/sp14-3.webp",
+                "/eternity/sp14-4.webp",
+                "/eternity/sp14-5.webp",
+                "/eternity/sp14-6.webp",
+                "/eternity/sp14-8.webp",
+                "/eternity/sp14-7.webp"
+
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ]
+        },
+        {
+            "id" : 14,
+            "title" : "\"HOODIE ZIP\" ETERNITY®",
+            "details" :[
+                
+            ],
+            "coin": 320000,
+            "saleCoin":42000,
+            "totalSale":24,
+            "image": "/eternity/sp15.png",
+            "listImg":[
+                "/eternity/sp15.png",
+                "/eternity/sp15-1.webp",
+                "/eternity/sp15-2.webp",
+                "/eternity/sp15-3.webp",
+                "/eternity/sp15-4.webp",
+                "/eternity/sp15-5.webp",
+                "/eternity/sp15-6.webp",
+                "/eternity/sp15-8.webp",
+                "/eternity/sp15-7.webp"
+
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ]
+        },
+        {
+            "id" : 15,
+            "title" : "\"LAGOM\" TEE",
+            "details" :[
+                
+            ],
+            "coin": 180000,
+            "saleCoin":40000,
+            "totalSale":39,
+            "image": "/eternity/sp16.webp",
+            "listImg":[
+                "/eternity/sp16.webp",
+                "/eternity/sp16-1.webp",
+                "/eternity/sp16-2.webp",
+                "/eternity/sp16-3.webp",
+                "/eternity/sp16-4.webp",
+                "/eternity/sp16-5.webp",
+                "/eternity/sp16-6.webp",
+                "/eternity/sp16-7.webp"
+
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ]
+        },
+        {
+            "id" : 16,
+            "title" : "\"BRAND NAME\" PINK",
+            "details" :[
+                
+            ],
+            "coin": 180000,
+            "saleCoin":35000,
+            "totalSale":49,
+            "image": "/eternity/sp17.png",
+            "listImg":[
+                "/eternity/sp17.png",
+                "/eternity/sp17-1.webp",
+                "/eternity/sp17-2.webp",
+                "/eternity/sp17-3.webp",
+                "/eternity/sp17-4.webp",
+                "/eternity/sp17-5.webp",
+                "/eternity/sp17-6.webp",
+                "/eternity/sp17-7.webp"
+
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ]
+        },
+        {
+            "id" : 17,
+            "title" : "CAP EY - Black Bird",
+            "details" :[
+                
+            ],
+            "coin": 220000,
+            "saleCoin":39000,
+            "totalSale":27,
+            "image": "/eternity/sp18.webp",
+            "listImg":[
+                "/eternity/sp18.webp",
+                "/eternity/sp18-1.webp",
+                "/eternity/sp18-2.webp",
+                "/eternity/sp18-3.webp",
+                "/eternity/sp18-4.webp",
+                "/eternity/sp18-5.webp",
+                "/eternity/sp18-6.webp",
+                "/eternity/sp18-7.webp"
+
+           ],        
+           "size":[
+               
+           ],
+
+           "optionColor": [
+               "trắng",
+               "nâu",
+               "kem",
+               "đen"
+           ]
+        },
+        {
+            "id" : 18,
+            "title" : "CAP EY - Yellow",
+            "details" :[
+                
+            ],
+            "coin": 220000,
+            "saleCoin":39000,
+            "totalSale":27,
+            "image": "/eternity/sp19.webp",
+            "listImg":[
+                "/eternity/sp19.webp",
+                "/eternity/sp19-1.webp",
+                "/eternity/sp19-2.webp",
+                "/eternity/sp19-3.webp",
+                "/eternity/sp19-4.webp",
+                "/eternity/sp19-5.webp",
+                "/eternity/sp19-6.webp",
+                "/eternity/sp19-7.webp"
+
+           ],        
+           "size":[
+            
+           ]
+        },
+        {
+            "id" : 19,
+            "title" : "Balo Eternity Gray",
+            "details" :[
+                
+            ],
+            "coin": 280000,
+            "saleCoin":33000,
+            "totalSale":39,
+            "image": "/eternity/sp20.webp",
+            "listImg":[
+                "/eternity/sp20.webp",
+                "/eternity/sp20-1.webp",
+                "/eternity/sp20-2.webp",
+                "/eternity/sp20-3.webp",
+                "/eternity/sp20-4.webp",
+                "/eternity/sp20-5.webp",
+                "/eternity/sp20-6.webp",
+                "/eternity/sp20-7.webp"
+
+           ],        
+           "size":[
+               
+           ]
+        },
+        {
+            "id" : 20,
+            "title" : "\"IMMORTAL\" SHIRT",
+            "details" :[
+                
+            ],
+            "coin": 250000,
+            "saleCoin":39000,
+            "totalSale":21,
+            "image": "/eternity/sp22.webp",
+            "listImg":[
+                "/eternity/sp22.webp",
+                "/eternity/sp22-1.webp",
+                "/eternity/sp22-2.webp",
+                "/eternity/sp22.webp",
+                "/eternity/sp22-1.webp",
+                "/eternity/sp22-2.webp",
+                "/eternity/sp22-1.webp",
+                "/eternity/sp22-2.webp"
+
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ]
+        },
+        {
+            "id" : 21,
+            "title" : "\"MONKEY\" TEE",
+            "details" :[
+                
+            ],
+            "coin": 180000,
+            "saleCoin":35000,
+            "totalSale":49,
+            "image": "/eternity/sp23.jpg",
+            "listImg":[
+                "/eternity/sp23.png",
+                "/eternity/sp23-1.webp",
+                "/eternity/sp23-2.webp",
+                "/eternity/sp23-3.webp",
+                "/eternity/sp23-4.webp",
+                "/eternity/sp23-5.webp",
+                "/eternity/sp23-6.webp",
+                "/eternity/sp23-7.webp"
+
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ]
+        },
+        {
+            "id" : 22,
+            "title" : "\"E BLUE\" TEE",
+            "details" :[
+                
+            ],
+            "coin": 250000,
+            "saleCoin":35000,
+            "totalSale":49,
+            "image": "/eternity/sp24.webp",
+            "listImg":[
+                "/eternity/sp24.webp",
+                "/eternity/sp24-1.webp",
+                "/eternity/sp24-2.webp",
+                "/eternity/sp24-3.webp",
+                "/eternity/sp24-4.webp",
+                "/eternity/sp24-5.webp",
+                "/eternity/sp24-6.webp",
+                "/eternity/sp24-7.webp"
+
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ]
+        },
+        {
+            "id" : 23,
+            "title" : "SHOULDER BAG SS1",
+            "details" :[
+                
+            ],
+            "coin": 280000,
+            "image": "/eternity/sp25.webp",
+            "listImg":[
+                "/eternity/sp25.webp",
+                "/eternity/sp25-1.webp",
+                "/eternity/sp25-2.webp",
+                "/eternity/sp25-3.webp",
+                "/eternity/sp25-4.webp",
+                "/eternity/sp25-5.webp",
+                "/eternity/sp25-6.webp",
+                "/eternity/sp25-7.webp"
+
+           ],        
+           "size":[
+              
+           ]
+        },
+        {
+            "id" : 24,
+            "title" : "\"JACKET RED\" ETERNITY",
+            "details" :[
+                
+            ],
+            "coin": 180000,
+            "saleCoin":38000,
+            "totalSale":53,
+            "image": "/eternity/sp28-1.webp",
+            "listImg":[
+                "/eternity/sp27.webp",
+                "/eternity/sp28-2.webp",
+                "/eternity/sp28-3.webp",
+                "/eternity/sp28-4.webp",
+                "/eternity/sp28-3.webp",
+                "/eternity/sp28-1.webp",
+                "/eternity/sp28-5.webp"
+
+           ],        
+           "size":[
+               "M",
+               "L",
+               "XL"
+           ]
+        }
+
+    ]
+}
