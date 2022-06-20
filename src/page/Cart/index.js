@@ -35,7 +35,7 @@ function Cart() {
             <div className={cx("row")}>
 
                 <div className=" col-lg-7 col-md-12 col-sm-12 col-12">
-                    {cartItems.map((cart) => {
+                    {cartItems.length ? cartItems.map((cart) => {
 
                         let totalCoins = new Intl.NumberFormat("vi-VN", {
                             style: "currency",
@@ -63,81 +63,89 @@ function Cart() {
                                     <p className={cx("remove-iteam")}
                                         onClick={() => {
                                             dispatch(removeFromCart(cart))
-                                            }
+                                        }
                                         }
                                     >
-                                    <FaRegTrashAlt className={cx("icon-remove")} />
-                                    xóa sản phẩm
-                                </p>
-                            </div>
-
-
-                            <div className={cx("total-coin")}>
-                                <p className={cx("coin")}>{totalCoins}</p>
-                                {cart.cards.saleCoin ? <p className={cx("sale-coin")}>{totalSaleCoin}</p> : undefined}
-                            </div>
-
-                            <div className={cx("quantity")}>
-
-                                <button className={cx("btn-incre")}>
-                                    <p className={cx("incre")}
-                                        onClick={() => { dispatch(increament(cart.cards.id)) }}
-                                    > +
+                                        <FaRegTrashAlt className={cx("icon-remove")} />
+                                        xóa sản phẩm
                                     </p>
-                                </button>
+                                </div>
 
-                                <p className={cx("total-quantity")}>{cart.quantity}</p>
 
-                                <button
-                                    className={cx("btn-incre")}
-                                    disabled={cart.quantity === 1 ? "disabled" : ""}
-                                    onClick={() => { dispatch(decreament(cart.cards.id)) }}
-                                >
-                                    <i className={cx("decre")}
-                                    >-
-                                    </i>
-                                </button>
+                                <div className={cx("total-coin")}>
+                                    <p className={cx("coin")}>{totalCoins}</p>
+                                    {cart.cards.saleCoin ? <p className={cx("sale-coin")}>{totalSaleCoin}</p> : undefined}
+                                </div>
+
+                                <div className={cx("quantity")}>
+
+                                    <button className={cx("btn-incre")}>
+                                        <p className={cx("incre")}
+                                            onClick={() => { dispatch(increament(cart.cards.id)) }}
+                                        > +
+                                        </p>
+                                    </button>
+
+                                    <p className={cx("total-quantity")}>{cart.quantity}</p>
+
+                                    <button
+                                        className={cx("btn-incre")}
+                                        disabled={cart.quantity === 1 ? "disabled" : ""}
+                                        onClick={() => { dispatch(decreament(cart.cards.id)) }}
+                                    >
+                                        <i className={cx("decre")}
+                                        >-
+                                        </i>
+                                    </button>
+
+                                </div>
 
                             </div>
-
                         </div>
-                        </div>
-                    })}
-            </div>
-            <div className=" col-lg-5 col-md-12 col-sm-12 col-12">
-                <div className={cx("cart-page-detail")}>
-                    <div className={cx("sum-cart-total")}>
-                        <h3>Thông Tin Đơn Hàng</h3>
+                    }):<div className={cx("cart-no-iteam")}>
+                            <h5>Giỏ hàng không có sản phầm nào.</h5>
+                        </div>}
+                </div>
+                <div className=" col-lg-5 col-md-12 col-sm-12 col-12">
+                    <div className={cx("cart-page-detail")}>
+                        <div className={cx("sum-cart-total")}>
+                            <h3>Thông Tin Đơn Hàng</h3>
 
-                        <div className={cx("provisionnal")}>
-                            <div className={cx("sum-total-iteam", "cart-info-monney")}>
-                                <p>Tạm tính {cartItems.length} sản phẩm</p>
-                                <span className={cx("")}>{sumtotal}</span>
+                            <div className={cx("provisionnal")}>
+                                <div className={cx("sum-total-iteam", "cart-info-monney")}>
+                                    <p>Tạm tính {cartItems.length} sản phẩm</p>
+                                    <span className={cx("")}>{sumtotal}</span>
+                                </div>
+
+                                <div className={cx("shiping")}>
+                                    <p>Phí vận chuyển sẽ được tính ở trang thanh toán. Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.</p>
+                                </div>
                             </div>
 
-                            <div className={cx("shiping")}>
-                                <p>Phí vận chuyển sẽ được tính ở trang thanh toán. Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.</p>
+                            <div className={cx("sub-total-coin", "cart-info-monney")}>
+                                <p>Tổng Cộng</p>
+
+                                <div className={cx("monney-total")}>
+                                    <p>{sumtotal}</p>
+                                </div>
                             </div>
-                        </div>
 
-                        <div className={cx("sub-total-coin", "cart-info-monney")}>
-                            <p>Tổng Cộng</p>
-
-                            <div className={cx("monney-total")}>
-                                <p>{sumtotal}</p>
+                            <div className={cx("btn-order")}>
+                                <Link to="/info-order" >
+                                    Đặt hàng
+                                </Link>
                             </div>
-                        </div>
-
-                        <div className={cx("btn-order")}>
-                            <Link to="/info-order" >
-                                Đặt hàng
-                            </Link>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div className={cx("service-cart")}>
+                <div className={cx("next-page-shops")}>
+                    <Link to="/shops" >Tiếp tục mua hàng</Link>
+                </div>
+            </div>
         </div>
-    </div>
 
 
 

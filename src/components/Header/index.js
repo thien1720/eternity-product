@@ -1,7 +1,6 @@
 import { useState, useContext } from "react"
 import { Link, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 import { BsSearch } from "react-icons/bs";
@@ -9,6 +8,7 @@ import { AiOutlineShopping } from "react-icons/ai";
 import { FiHeart, FiMenu } from "react-icons/fi";
 import { BiUser } from "react-icons/bi";
 
+import Login from "~/components/Login"
 import { themContext } from "~/Default"
 import { Wrapper as PopperWrapper } from "../Poper";
 import NavBar from "../NavBar";
@@ -20,6 +20,9 @@ const cx = classNames.bind(styles);
 
 
 function Header() {
+    // const [overLay , setOverlay] = useState("over-lay")
+    const [login, setLogin] = useState(false)
+    const [nav, setNav] = useState(false);
     const cartItems = useSelector((state) => state.cart);
     const productIteam = useContext(themContext)
 
@@ -31,18 +34,17 @@ function Header() {
         return productIteam.setFilter(updateCart.concat(updateCart1, updateCart2))
     }
 
-    // const [heart , setHeart ] = useState(false)
-    const [nav, setNav] = useState(false);
-
     function handleNavBar() {
         setNav(!nav)
     }
 
-    // function handleShowHeart(){
-    //     setHeart(!heart)
-    // }
+    function handleLogin(){
+        setLogin(!login)
+        // setOverlay("over-lay" , "done")
+    }
 
     return <div>
+        {login ? <Login login={login}  handleLogin = {handleLogin} /> :undefined}
 
         <NavBar nav={nav} setNav={setNav} />
 
@@ -196,7 +198,9 @@ function Header() {
                             >
                                 <FiHeart className={cx("header-icon")} />
                             </div>
-                            <div className={cx("tool-icon")}>
+                            <div className={cx("tool-icon")}
+                                onClick={handleLogin}
+                            >
                                 <BiUser className={cx("header-icon")} />
                             </div>
                         </div>
