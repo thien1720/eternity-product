@@ -10,6 +10,7 @@ import styles from "./CardIteam.module.scss";
 const cx = classNames.bind(styles);
 
 function CardIteam(props) {
+    console.log(props)
     return <Link to="/shops" key={uuidv4()}>
         <div className={cx("card-show-iteam")}>
             <div className={cx("product-img")}>
@@ -54,7 +55,7 @@ function CardIteam(props) {
 
                 <div className={cx("product-color")}>
 
-                   <IteamColor  />
+                    <IteamColor />
 
                 </div>
             </div>

@@ -1,16 +1,16 @@
-import {useState, useEffect} from "react"
+import { useState, useEffect } from "react"
 
-function ListIteam (){
+function ListIteam() {
     const [cards, setCard] = useState([])
     useEffect(() => {
 
-        fetch("http://localhost:8000/shops")
+        fetch("https://api-rn.onrender.com/project")
             .then((res) => res.json())
             .then((card) => setCard(card));
 
     }, [])
 
-
+    // console.log(cards)
     return cards
 }
 

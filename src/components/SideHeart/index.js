@@ -1,11 +1,11 @@
 import { useState } from "react"
-import { useSelector,  useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { BsXLg} from "react-icons/bs";
+import { BsXLg } from "react-icons/bs";
 import classNames from "classnames/bind"
 
 import Heart from "~/components/ShowHeart"
-import { removeHeart} from "~/store/reducers/option.slice"
+import { removeHeart } from "~/store/reducers/option.slice"
 import styles from "./NavBar.module.scss";
 
 const cx = classNames.bind(styles);
@@ -20,8 +20,8 @@ function ShowHeart(props) {
     function handleClose() {
         setHeart(!heart);
     }
-
-    return <div className={cx(heart ? "overlay-show" :undefined)}
+    console.log(cartHeart)
+    return <div className={cx(heart ? "overlay-show" : undefined)}
         onClick={handleClose}
     >
         <div className={cx(heart ? ("box-header") : "box-header-show", "box-header")}>
@@ -36,8 +36,7 @@ function ShowHeart(props) {
             <div className={cx("list-page")}>
                 <ul>
                     <li>
-                        {cartHeart.map((heart, index) =>
-                            { return <Heart key={index} heart = {heart} />}
+                        {cartHeart.map((heart, index) => { return <Heart key={index} heart={heart} /> }
                         )}
                     </li>
 

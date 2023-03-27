@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { BsXCircle } from "react-icons/bs";
 import { v4 as uuidv4 } from 'uuid';
 import SlideShow from "~/components/SlideShowImg";
-import {addToCart} from "~/store/reducers/cart.slice";
+import { addToCart } from "~/store/reducers/cart.slice";
 import IteamColor from "~/components/IteamColor";
 import classNames from "classnames/bind";
 import styles from "./ShowIteam.module.scss";
@@ -21,14 +21,14 @@ function ShowIteam() {
     const [loading, setLoading] = useState(true)
     const [quantity, setQuantity] = useState(1)
     const [type, setType] = useState("")
-    const [Color , setColor] = useState("")
+    const [Color, setColor] = useState("")
     const [open, setOpen] = useState(false);
     const closeModal = () => setOpen(false);
 
 
-    
+
     useEffect(() => {
-        fetch(`https://eternity-json.herokuapp.com/${params.shops}/${params.id}`)
+        fetch(`https://api-rn.onrender.com/project/${params.id}`)
             .then((res) => res.json())
             .then((card) => {
                 setCard(card)
@@ -56,7 +56,7 @@ function ShowIteam() {
     let proIteam = {
         cards,
         quantity,
-        type, 
+        type,
         Color
     }
 
@@ -66,6 +66,7 @@ function ShowIteam() {
     let priceSale = new Intl.NumberFormat('vi-VN',
         { style: 'currency', currency: 'VND' }).format(cards.saleCoin)
 
+    console.log(cards)
     return <div className={cx("show-iteam")}>
 
         <div className="breadcrumb-wrap container-xl container ">
@@ -103,8 +104,6 @@ function ShowIteam() {
             </div>
 
             <div className="container-xl container">
-
-
                 <div className="row">
                     <div className="col-lg-7 col-md-7 col-sm-12 col-12">
                         <SlideShow image={cards.listImg} />
@@ -122,8 +121,8 @@ function ShowIteam() {
 
                             <div className={cx("card-price")}>
                                 <p className={cx("card-price-coins")}>{priceCoin}</p>
-                                { cards.saleCoin ? <p className={cx("card-price-sale-coins")}>{ priceSale}</p> : undefined}
-                                {cards.totalSale ? <p className={cx("card-price-total-sale")}>{cards.totalSale}%</p> :undefined}
+                                {cards.saleCoin ? <p className={cx("card-price-sale-coins")}>{priceSale}</p> : undefined}
+                                {cards.totalSale ? <p className={cx("card-price-total-sale")}>{cards.totalSale}%</p> : undefined}
 
                             </div>
 
@@ -140,8 +139,8 @@ function ShowIteam() {
                                             return <p
                                                 key={sz}
                                                 className={cx("nav-size",
-                                                    type === sz ? "borrder-color" 
-                                                : "")}
+                                                    type === sz ? "borrder-color"
+                                                        : "")}
                                                 onClick={() => setType(sz)}
 
                                             >{sz}</p>
@@ -154,12 +153,12 @@ function ShowIteam() {
                             <div className={cx("option-color")}>
                                 <p>Màu sắc</p>
 
-                                {cards.optionColor ? cards.optionColor.map((color , index) => {
-                                    return <IteamColor 
-                                        key = {uuidv4()} 
-                                        optionColor={color} 
+                                {cards.optionColor ? cards.optionColor.map((color, index) => {
+                                    return <IteamColor
+                                        key={uuidv4()}
+                                        optionColor={color}
                                         onClick={() => setColor(color)}
-                                        selecColor = {Color}
+                                        selecColor={Color}
                                     />
                                 }) : undefined}
                             </div>
@@ -196,7 +195,7 @@ function ShowIteam() {
                                     // ref={cart}
                                     className={cx("add-card")}
                                     onClick={(e) => {
-                                        if (proIteam.type.length > 0 ) {
+                                        if (proIteam.type.length > 0) {
 
                                             dispatch(addToCart(proIteam))
                                         } else {

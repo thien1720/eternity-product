@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { Link , NavLink} from "react-router-dom";
-import { useDispatch} from "react-redux";
+import { Link, NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from 'uuid';
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineShopping } from "react-icons/ai";
@@ -19,7 +19,7 @@ function CardIteam(props) {
 
     const colors = props.optionColor
 
-    function handleAddHeart(e){
+    function handleAddHeart(e) {
         e.preventDefault()
         dispatch(addHeart(props.card))
         productIteam.setPopHeart(!productIteam.popHeart)
@@ -34,15 +34,16 @@ function CardIteam(props) {
                 : 'VND'
         }).format(props.saleCoin);
 
+    // console.log(props.card)
     return <div className="col-6 col-lg-3 col-md-4 col-sm-6 mb-2">
         <div className={cx("laygout-iteam")}>
-            <Link 
+            <Link
                 to={`/shops/${props.id}`}
             >
                 <div className={cx("card-show-iteam")}>
                     <div className={cx("product-img")}>
                         <div className={cx("product-show-img")}>
-                            <img src={props.image} atl="sản phẩm" className={cx("image-iteam")} />
+                            <img src={props.card.listImg[0]} atl="sản phẩm" className={cx("image-iteam")} />
                         </div>
 
                         <div className={cx("product-push-iteam")}>
@@ -50,7 +51,7 @@ function CardIteam(props) {
                                 <BsSearch className={cx("product-icon")} />
                             </Link>
 
-                            <Link to="/shops" 
+                            <Link to="/shops"
                                 onClick={handleAddHeart}
                             >
                                 <FiHeart className={cx("product-icon")} />
@@ -77,9 +78,9 @@ function CardIteam(props) {
                             <p className={cx("product-total-iteam")}>
                                 {x}
                                 <span className={cx("product-sale")}>
-                                    {props.saleCoin ? 
+                                    {props.saleCoin ?
                                         y
-                                    : undefined}
+                                        : undefined}
                                 </span>
 
                             </p>
@@ -90,10 +91,10 @@ function CardIteam(props) {
                         </div>
 
                         <div className={cx("product-color")}>
-                            {colors ? colors.map((colors )=>{
-                                return <IteamColor key={uuidv4()}  optionColor={colors}/>
+                            {colors ? colors.map((colors) => {
+                                return <IteamColor key={uuidv4()} optionColor={colors} />
                             }) : undefined}
-                            
+
 
                         </div>
                     </div>

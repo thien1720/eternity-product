@@ -5,8 +5,6 @@ import Popup from 'reactjs-popup';
 import {
     cartTotalPriceSelector,
 } from "~/store/selector/selector";
-
-
 import FormAddress from "~/components/FormAddress";
 
 import classNames from "classnames/bind";
@@ -48,7 +46,7 @@ function InfoOrder() {
         }
     }
 
-    
+
 
     return <div className={cx("info-main", "container", "contaner-xl")}>
 
@@ -56,12 +54,12 @@ function InfoOrder() {
             {open ? <div className={cx("popup")}>
                 <p>chúc mừng <span>{fullName}</span> đã đặt hàng tại Eternity.</p>
 
-                <button 
+                <button
                     className={cx("close-popup")}
                     onClick={closeModal}
                 >Đồng Ý</button>
             </div> : undefined}
-            
+
         </div>
 
         <h3 className={cx("title-info")}>Eternity</h3>
@@ -74,9 +72,9 @@ function InfoOrder() {
 
         <div className={cx("style-reverce", "row")}>
             <div className="col-lg-7 col-md-7 col-sm-12 col-12">
-                <FormAddress 
-                    setOpen={setOpen} open={open} 
-                    fullName={fullName} 
+                <FormAddress
+                    setOpen={setOpen} open={open}
+                    fullName={fullName}
                     setFullName={setFullName}
                 />
 
@@ -91,8 +89,10 @@ function InfoOrder() {
                                 style: "currency",
                                 currency: "VND",
                             }).format(cart.cards.coin);
+
+                            console.log(cart)
                             return <div className={cx("cart-item")} key={cart.cards.id}>
-                                <img src={cart.cards.image} alt="anh sản phẩm" />
+                                <img src={cart.cards.listImg[0]} alt="anh sản phẩm" />
                                 <div className={cx("detail")}>
                                     <h5>{cart.cards.title}</h5>
                                     <p>Số lượng:{cart.quantity}</p>

@@ -46,10 +46,11 @@ function Cart() {
                             style: "currency",
                             currency: "VND",
                         }).format(cart.cards.saleCoin);
+                        console.log(cart)
                         return <div className={cx("group-cart")} key={cart.cards.id}>
                             <div className={cx("show-cart")}>
                                 <div className={cx("iteam-img")}>
-                                    <img src={cart.cards.image} alt="product" />
+                                    <img src={cart.cards.listImg[0]} alt="product" />
                                 </div>
 
                                 <div className={cx("detail-iteam")}>
@@ -102,9 +103,9 @@ function Cart() {
 
                             </div>
                         </div>
-                    }):<div className={cx("cart-no-iteam")}>
-                            <h5>Giỏ hàng không có sản phầm nào.</h5>
-                        </div>}
+                    }) : <div className={cx("cart-no-iteam")}>
+                        <h5>Giỏ hàng không có sản phầm nào.</h5>
+                    </div>}
                 </div>
                 <div className=" col-lg-5 col-md-12 col-sm-12 col-12">
                     <div className={cx("cart-page-detail")}>

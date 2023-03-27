@@ -15,12 +15,12 @@ function DefaultLayout({ children }) {
     })
 
     const [popHeart, setPopHeart] = useState(false)
-    const closeHeart =() =>{
+    const closeHeart = () => {
         setPopHeart(false)
     }
-    const [heart , setHeart ] = useState(false)
+    const [heart, setHeart] = useState(false)
 
-    function handleShowHeart(){
+    function handleShowHeart() {
         setHeart(!heart)
     }
     const [filter, setFilter] = useState(cards)
@@ -30,7 +30,7 @@ function DefaultLayout({ children }) {
     useEffect(() => {
         const getProducts = async () => {
             setLoad(true);
-            const reponse = await fetch("https://eternity-json.herokuapp.com/shops")
+            const reponse = await fetch("https://api-rn.onrender.com/project")
 
             if (componentMount) {
                 setCard(await reponse.clone().json())
@@ -101,9 +101,9 @@ function DefaultLayout({ children }) {
     return <div className="">
         <themContext.Provider value={listValue}>
             <Header />
-                <div>
-                    {children}
-                </div>
+            <div>
+                {children}
+            </div>
             <Footer />
 
         </themContext.Provider>

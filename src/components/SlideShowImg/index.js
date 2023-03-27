@@ -15,7 +15,7 @@ const cx = classNames.bind(styles);
 
 function SlideShow({ image }) {
     const [firstSwiper, setFirstSwiper] = useState();
-
+    console.log(image)
     return (
         <div className={cx("slide-show-img")}>
             <Swiper
