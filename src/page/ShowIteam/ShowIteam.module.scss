@@ -6,7 +6,7 @@
     align-items: center;
     font-size: 1.4rem;
 
-    .title-iteam{
+    .title-iteam {
         opacity: 0.8;
         font-size: 1.3rem;
     }
@@ -15,85 +15,80 @@
         color: var(--color-name-input);
         content: '/';
     }
-
 }
 
-.select-option{
-    position:sticky;
+.select-option {
+    position: sticky;
     top: 0;
 }
 
-.local{
+.local {
     font-size: 1.3rem;
-    color:var(--brean-color);
+    color: var(--brean-color);
     line-height: 1.4;
     text-transform: uppercase;
-    
 }
-.title-detail{
-    h1{
+.title-detail {
+    h1 {
         font-size: 3rem;
         color: var(--brean-color);
         margin: 1rem 0;
     }
 }
 
-.card-price{
-    
+.card-price {
     display: flex;
     border-top: 1px dotted #dee2e6;
     border-bottom: 1px dotted #dee2e6;
-    padding: 1rem 0 ;
-    .card-price-coins{
+    padding: 1rem 0;
+    .card-price-coins {
         font-size: 1.8rem;
         color: var(--sale-iteam);
         font-weight: 500;
     }
-    
-    .card-price-sale-coins{
+
+    .card-price-sale-coins {
         font-size: 1.4rem;
         font-weight: 500;
-        color:var(--sale-coin);
+        color: var(--sale-coin);
         text-decoration: line-through;
     }
-    
-    .card-price-total-sale{
+
+    .card-price-total-sale {
         font-size: 1.3rem;
         background-color: var(--sale-iteam);
         color: var(--sale-coin);
-        padding:0.2rem 1rem ;
+        padding: 0.2rem 1rem;
         border-radius: 1.5rem;
     }
 
-    ::after{
-        content: "";
+    ::after {
+        content: '';
         margin-right: 2rem;
     }
-
-    
 }
 
-.option-size{
-    margin:10px 0;
-    .head-size{
-        display:flex;
+.option-size {
+    margin: 10px 0;
+    .head-size {
+        display: flex;
         align-items: center;
         font-size: 1.3rem;
-        p{
+        p {
             font-weight: 700;
-            color:var(--brean-color)
+            color: var(--brean-color);
         }
-        a{
-            background-color:var(--option-size);
-            padding: .2rem 1rem;
+        a {
+            background-color: var(--option-size);
+            padding: 0.2rem 1rem;
             margin-left: 2rem;
         }
     }
 
-    .select-size{
+    .select-size {
         display: flex;
 
-        .nav-size{
+        .nav-size {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -105,16 +100,23 @@
             cursor: pointer;
         }
 
-        .borrder-color{
-            border :1px solid var(--style-color);
+        .borrder-color {
+            border: 1px solid var(--style-color);
         }
     }
 }
-
-.quantity{
+.option-color {
+    margin-bottom: 10px;
     display: flex;
-    
-    .btn-incre{
+    p {
+        margin-right: 10px;
+    }
+}
+
+.quantity {
+    display: flex;
+
+    .btn-incre {
         background: none;
         border: 1px solid var(--border-color);
         height: 35px;
@@ -123,7 +125,7 @@
         font-size: 1.4rem;
     }
 
-    > p{
+    > p {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -135,64 +137,62 @@
         border: 1px solid var(--border-color);
         border-left: none;
         border-right: none;
-        
     }
 }
 
-.option-paying{
+.option-paying {
     margin: 0.5rem 0;
     display: flex;
-    a{
+    a {
         height: 3.5rem;
-        line-height:3.5rem;
+        line-height: 3.5rem;
         color: var(--nomal-color);
         border: none;
-        background:var(--style-color);
+        background: var(--style-color);
         min-width: 13.5rem;
         font-weight: 500;
-        margin:0 0.5rem;
+        margin: 0 0.5rem;
         text-transform: uppercase;
         width: 100%;
         white-space: nowrap;
         text-align: center;
-        &:hover{
+        &:hover {
             opacity: 0.8;
             color: var(--nomal-color);
         }
     }
 }
 
-.box-popup{
+.box-popup {
     position: relative;
     background-color: var(--nomal-color);
-    border-radius: .2rem;
-    width:240px;
+    border-radius: 0.2rem;
+    width: 240px;
     min-width: calc(100% - 12rem);
     overflow: hidden;
 
-    .header-popup{
+    .header-popup {
         background-color: var(--style-color);
         width: 100%;
         height: 3.5rem;
-        
 
-        .selec-close{
-            position:absolute;
-            top: 0 ;
-            right:0;
-            padding:0.4rem;
+        .selec-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0.4rem;
             color: var(--nomal-color);
             cursor: pointer;
-            font-size:1.6rem;
+            font-size: 1.6rem;
             transition: all 0.2s linear;
-            &:hover{
+            &:hover {
                 opacity: 0.8;
             }
         }
     }
 
-    .popup-description{
-        margin: 1.5rem ;
+    .popup-description {
+        margin: 1.5rem;
         text-align: center;
         font-size: 1.4rem;
     }

@@ -20,7 +20,7 @@ function ShowHeart(props) {
     function handleClose() {
         setHeart(!heart);
     }
-    console.log(cartHeart)
+    // console.log(cartHeart)
     return <div className={cx(heart ? "overlay-show" : undefined)}
         onClick={handleClose}
     >

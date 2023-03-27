@@ -90,7 +90,7 @@ function InfoOrder() {
                                 currency: "VND",
                             }).format(cart.cards.coin);
 
-                            console.log(cart)
+                            // console.log(cart)
                             return <div className={cx("cart-item")} key={cart.cards.id}>
                                 <img src={cart.cards.listImg[0]} alt="anh sản phẩm" />
                                 <div className={cx("detail")}>
