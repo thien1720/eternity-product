@@ -1,16 +1,38 @@
-import { useState, useContext , useRef } from "react"
+import { useState, useContext, useEffect } from "react"
 import { Link, NavLink } from "react-router-dom";
-import { BsXLg, BsChevronRight } from "react-icons/bs";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { BsXLg, BsChevronRight, BsBoxArrowRight } from "react-icons/bs";
 import classNames from "classnames/bind"
 import styles from "./NavBar.module.scss";
+import { signOut } from "firebase/auth";
 
+import { auth } from "~/until/firebase"
 import { themContext } from "~/Default"
 const cx = classNames.bind(styles);
 
 
 function NavBar(props) {
+    const { handleLogin } = props
 
     const productIteam = useContext(themContext)
+    useEffect(() => {
+        const name = localStorage.getItem("user")
+
+        // onAuthStateChanged(auth, (user) => {
+        //     if (user) {
+
+        //         // User is signed in, see docs for a list of available properties
+        //         // https://firebase.google.com/docs/reference/js/firebase.User
+        //         console.log(user.email.split("@")[0])
+        //         const uid = user.uid;
+
+        //     } else {
+        //         console.log("user is logged out")
+        //     }
+        // });
+
+    }, [])
 
     function handleFilter(props, props1, props2) {
         const updateCart = productIteam.cards.filter((x) => x.title.includes(props))
@@ -39,11 +61,36 @@ function NavBar(props) {
         setShowNav(!showNav)
     }
 
+    const notify = (e) => toast.success(e, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
+    function handleLogout() {
+        signOut(auth).then((e) => {
+            console.log(e)
+            // Sign-out successful.
+            notify("Signed out successfully")
+            localStorage.removeItem("user")
+            console.log("Signed out successfully")
+        }).catch((error) => {
+            // An error happened.
+        });
+    }
+
+    const nameUser = localStorage.getItem("user")
+
+
     return <div className={cx(nav ? "overlay-side" : undefined)}
         onClick={handleClose}
     >
         <div className={cx(nav ? ("box-header") : "box-header-show", "box-header")}
-            
+
         >
             <div className={cx("head-side-bar")}>
                 <div className={cx("close-side-bar")}
@@ -54,6 +101,10 @@ function NavBar(props) {
             </div>
 
             <div className={cx("list-page")}>
+                <div className={cx("info-user")}>
+                    <img src="eternity/avartar-user.jpg" alt="avartar" />
+                    <p>{nameUser ? nameUser : "Vui lòng đăng nhập"}</p>
+                </div>
                 <ul>
                     <li>
                         <NavLink to="/" className={(nav) => cx("next-page", { active: nav.isActive })}>Eternity </NavLink>
@@ -65,7 +116,7 @@ function NavBar(props) {
                         >
                             <p className={cx("next-page", "style-nav-page")}
                                 onClick={handleShowNav}
-                               
+
                             >Shop
                                 <BsChevronRight className={cx("icon-nav-page")} />
                             </p>
@@ -162,8 +213,19 @@ function NavBar(props) {
                     <li>
                         <NavLink to="/service" className={(nav) => cx("next-page", { active: nav.isActive })}>Điều khoản và dịch vụ </NavLink>
                     </li>
-
+                    <li>
+                        <p className={cx("next-page")}
+                            onClick={handleLogin}
+                        >Đăng Nhập </p>
+                    </li>
+                    <li>
+                        <p className={cx("next-page")}
+                            onClick={handleLogout}
+                        >Logout <BsBoxArrowRight /></p>
+                    </li>
                 </ul>
+
+
             </div>
 
         </div>

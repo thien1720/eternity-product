@@ -1,12 +1,64 @@
 import { useFormik } from "formik"
 import * as Yup from "yup"
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from "~/until/firebase"
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import classNames from "classnames/bind"
 import styles from "./Login.module.scss";
 const cx = classNames.bind(styles);
 
 function Register({ handleLogin }) {
+    const notify = () => toast.success("Create account success.", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
 
+    const notifyW = (e) => toast.warn(e, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
+
+    const onSubmit = async (email, password, resetForm) => {
+
+        await createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential;
+                // console.log(user);
+                if (userCredential) {
+                    notify()
+                    handleLogin()
+                    resetForm({ value: "" })
+
+                }
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode, errorMessage);
+                if (error) {
+                    notifyW(error.message)
+                    return error
+                }
+
+            });
+
+
+    }
 
     const formik = useFormik({
         initialValues: {
@@ -29,13 +81,14 @@ function Register({ handleLogin }) {
                 .required('Vui lòng nhập trường này')
         }),
         onSubmit: (values, { resetForm }) => {
-            resetForm({ value: "" })
-            handleLogin()
-
+            onSubmit(values.email, values.password, resetForm)
+            // console.log(values)
+            // resetForm({ value: "" })
+            // handleLogin()
         }
     })
 
-    console.log(formik.onSubmit)
+    // console.log(formik.onSubmit)
     return <div className={cx("style-login")}>
         <h5>Đăng ký</h5>
         <div className={cx("register")}>
@@ -82,7 +135,7 @@ function Register({ handleLogin }) {
                         onBlur={formik.handleBlur}
                         name="password"
                         id="password1"
-                        type="password"
+                        type="text"
                         placeholder=""
                         className="fullname-sub"
                     />
@@ -98,7 +151,7 @@ function Register({ handleLogin }) {
                         onBlur={formik.handleBlur}
                         name="confirmPassword"
                         id="confirm1"
-                        type="password"
+                        type="text"
                         placeholder=""
                         className="fullname-sub"
                     />
@@ -108,7 +161,7 @@ function Register({ handleLogin }) {
 
                 <div className={cx("sub-form")}>
                     <button className={cx("sub-btn")}
-                        // onClick={handleLogin}
+                    // onClick={handleLogin}
                     >
                         Đăng ký
                     </button>

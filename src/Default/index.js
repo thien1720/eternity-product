@@ -1,7 +1,11 @@
 import { useState, useEffect, useMemo, useContext, createContext } from "react"
-
+import { FaArrowUp } from "react-icons/fa";
 import Footer from "~/components/Footer";
 import Header from "~/components/Header"
+
+import classNames from "classnames/bind"
+import styles from "./default.module.scss";
+const cx = classNames.bind(styles);
 
 export const themContext = createContext()
 
@@ -15,17 +19,18 @@ function DefaultLayout({ children }) {
     })
 
     const [popHeart, setPopHeart] = useState(false)
+    const [heart, setHeart] = useState(false)
+    const [filter, setFilter] = useState(cards)
+    const [load, setLoad] = useState(false)
+    let componentMount = true;
+    const [showButton, setShowButton] = useState(false);
     const closeHeart = () => {
         setPopHeart(false)
     }
-    const [heart, setHeart] = useState(false)
 
     function handleShowHeart() {
         setHeart(!heart)
     }
-    const [filter, setFilter] = useState(cards)
-    const [load, setLoad] = useState(false)
-    let componentMount = true;
 
     useEffect(() => {
         const getProducts = async () => {
@@ -49,6 +54,23 @@ function DefaultLayout({ children }) {
 
     }, [])
 
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 300) {
+                setShowButton(true);
+            } else {
+                setShowButton(false);
+            }
+        });
+    }, [])
+
+    // This function will scroll the window to the top 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // for smoothly scrolling
+        });
+    };
     function compareValues(key, order = 'asc') {
         return function innerSort(a, b) {
             if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
@@ -98,9 +120,13 @@ function DefaultLayout({ children }) {
         popHeart,
     }
 
-    return <div className="">
+    return <div className={cx('main')}>
         <themContext.Provider value={listValue}>
             <Header />
+
+            {showButton && <div className={cx("back-to-top")} onClick={scrollToTop}>
+                <FaArrowUp />
+            </div>}
             <div>
                 {children}
             </div>

@@ -1,12 +1,16 @@
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import { Link, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
-import { BsSearch } from "react-icons/bs";
+import { BsSearch, BsBoxArrowRight } from "react-icons/bs";
 import { AiOutlineShopping } from "react-icons/ai";
 import { FiHeart, FiMenu } from "react-icons/fi";
 import { BiUser } from "react-icons/bi";
+import { ToastContainer, toast } from 'react-toastify';
+import { auth } from "~/until/firebase"
+import { signOut } from "firebase/auth";
+
 
 import Login from "~/components/Login"
 import { themContext } from "~/Default"
@@ -38,17 +42,53 @@ function Header() {
         setNav(!nav)
     }
 
-    function handleLogin(){
+    function handleLogin() {
         setLogin(!login)
         // setOverlay("over-lay" , "done")
     }
 
+    function handleLogout() {
+        signOut(auth).then((e) => {
+            console.log(e)
+            // Sign-out successful.
+            notify("Signed out successfully")
+            localStorage.removeItem("user")
+            console.log("Signed out successfully")
+        }).catch((error) => {
+            // An error happened.
+        });
+    }
+    const name = localStorage.getItem("user")
+
+    const notify = (e) => toast.success(e, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
+
     return <div>
-        {login ? <Login login={login}  handleLogin = {handleLogin} /> :undefined}
+        {login ? <Login login={login} handleLogin={handleLogin} /> : undefined}
+        <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+        />
+        <ToastContainer />
+        <NavBar nav={nav} setNav={setNav} handleLogin={handleLogin} />
 
-        <NavBar nav={nav} setNav={setNav} />
-
-        <ShowHeart heart={productIteam.heart}  setHeart={productIteam.setHeart} />
+        <ShowHeart heart={productIteam.heart} setHeart={productIteam.setHeart} />
         <header className={cx("wrapper")}>
 
             <div className={cx("container")} >
@@ -65,7 +105,7 @@ function Header() {
                         <div className={cx("header-pageshow")}>
                             <ul>
                                 <li>
-                                    <NavLink to="/" className={(nav) =>cx("next-page" , {active: nav.isActive})}>Eternity </NavLink>
+                                    <NavLink to="/" className={(nav) => cx("next-page", { active: nav.isActive })}>Eternity </NavLink>
                                 </li>
                                 <div>
                                     <Tippy
@@ -135,13 +175,13 @@ function Header() {
                                     >
 
                                         <li>
-                                            <NavLink to="/shops" className={(nav) =>cx("next-page" , {active: nav.isActive})}>Shop</NavLink>
+                                            <NavLink to="/shops" className={(nav) => cx("next-page", { active: nav.isActive })}>Shop</NavLink>
                                         </li>
                                     </Tippy>
                                 </div>
 
                                 <li>
-                                    <NavLink to="/sizeChat" className={(nav) =>cx("next-page" , {active: nav.isActive})}>Size Chart</NavLink>
+                                    <NavLink to="/sizeChat" className={(nav) => cx("next-page", { active: nav.isActive })}>Size Chart</NavLink>
                                 </li>
                                 <div>
                                     <Tippy
@@ -166,12 +206,12 @@ function Header() {
                                         )}
                                     >
                                         <li>
-                                            <NavLink to="/abouts" className={(nav) =>cx("next-page" , {active: nav.isActive})}>About Us</NavLink>
+                                            <NavLink to="/abouts" className={(nav) => cx("next-page", { active: nav.isActive })}>About Us</NavLink>
                                         </li>
                                     </Tippy>
                                 </div>
                                 <li>
-                                    <NavLink to="/service" className={(nav) =>cx("next-page" , {active: nav.isActive})}>Điều Khoản Và Dịch Vụ</NavLink>
+                                    <NavLink to="/service" className={(nav) => cx("next-page", { active: nav.isActive })}>Điều Khoản Và Dịch Vụ</NavLink>
                                 </li>
 
                             </ul>
@@ -187,10 +227,10 @@ function Header() {
                                 <BsSearch className={cx("header-icon")} />
                             </div>
 
-                            <div className={cx("tool-icon" , "icon-shoping")}>
+                            <div className={cx("tool-icon", "icon-shoping")}>
                                 <Link to="/cart" >
                                     <span className={cx("total-iteam")}>{cartItems.length}</span>
-                                    <AiOutlineShopping className={cx("header-icon" )} />
+                                    <AiOutlineShopping className={cx("header-icon")} />
                                 </Link>
                             </div>
                             <div className={cx("tool-icon")}
@@ -198,11 +238,20 @@ function Header() {
                             >
                                 <FiHeart className={cx("header-icon")} />
                             </div>
+
                             <div className={cx("tool-icon")}
                                 onClick={handleLogin}
                             >
                                 <BiUser className={cx("header-icon")} />
                             </div>
+
+                            {
+                                name && <div className={cx("tool-icon", "log-out")}
+                                    onClick={handleLogout}
+                                >
+                                    <BsBoxArrowRight className={cx("header-icon")} />
+                                </div>
+                            }
                         </div>
 
                         <div className={cx("clear-icon")}>

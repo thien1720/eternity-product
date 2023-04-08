@@ -80,7 +80,6 @@
     }
 }
 
-
 .form-login {
     .iteamInput {
         display: flex;
@@ -103,13 +102,13 @@
             border: 1px solid var(--border-input);
             border-radius: 0.25rem;
             transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-            outline:var(--input-radio)
+            outline: var(--input-radio);
         }
     }
 }
-.sub-form{
+.sub-form {
     margin-top: 2rem;
-    .sub-btn{
+    .sub-btn {
         font-size: 1.4rem;
         text-transform: uppercase;
         background: #222;
@@ -119,21 +118,30 @@
         padding-bottom: 10px;
         color: #fff;
         border-radius: 0.25rem;
-        &:hover{
+        &:hover {
             opacity: 0.8;
         }
     }
 }
 
-
 // register
 
-.register{
+.register {
     overflow: hidden;
     margin: 2rem 0;
 }
 
-.warning{
+.warning {
     color: var(--input-radio);
     font-weight: 500;
+}
+// @media (max-width: 767px) {
+//     .box-login {
+//         max-width: calc(100% - 100px);
+//     }
+// }
+@media (max-width: 922px) {
+    .box-login {
+        max-width: calc(100% - 100px);
+    }
 }

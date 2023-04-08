@@ -1,11 +1,75 @@
+import { useEffect } from "react"
 import { useFormik } from "formik"
 import * as Yup from "yup"
+import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import { auth } from "~/until/firebase"
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import classNames from "classnames/bind"
 import styles from "./Login.module.scss";
 const cx = classNames.bind(styles);
 
 
-function LoginForm({handleLogin}) {
+function LoginForm({ handleLogin }) {
+
+    // useEffect(() => {
+    //     onAuthStateChanged(auth, (user) => {
+    //         if (user) {
+    //             // User is signed in, see docs for a list of available properties
+    //             // https://firebase.google.com/docs/reference/js/firebase.User
+    //             // console.log(user)
+    //             const name = user.email.split("@")[0];
+    //             localStorage.setItem('user', name);
+    //         } else {
+    //             console.log("user is logged out")
+    //         }
+    //     });
+
+    // }, [])
+    const notify = (e) => toast.success(e, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
+
+    const notifyW = (e) => toast.warn(e, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
+
+    const onLogin = (email, password, resetForm) => {
+
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                notify("Login success.")
+                handleLogin()
+                resetForm({ value: "" })
+                const name = user.email.split("@")[0];
+                localStorage.setItem('user', name);
+                // console.log(user);
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode, errorMessage)
+                notifyW(error.message)
+            });
+    }
+
     const formik = useFormik({
         initialValues: {
             email: "",
@@ -19,9 +83,11 @@ function LoginForm({handleLogin}) {
                 .required("Vui lòng nhập mật khẩu của bạn.")
                 .min(8, "Độ dài tối thiểu là 8 kí tự.")
         }),
-        onSubmit: (values, { resetForm } )=> {
-            resetForm({ value: "" })
-            handleLogin()
+        onSubmit: (values, { resetForm }) => {
+            // resetForm({ value: "" })
+            // handleLogin()
+            // console.log(values)
+            onLogin(values.email, values.password, resetForm)
         }
     })
     return <div className={cx("style-login")}>
@@ -59,11 +125,11 @@ function LoginForm({handleLogin}) {
 
                 </div>
 
-                
+
 
                 <div className={cx("sub-form")}>
                     <button className={cx("sub-btn")}
-                        // onClick={handleLogin}
+                    // onClick={handleLogin}
                     >
                         Đăng nhập
                     </button>
